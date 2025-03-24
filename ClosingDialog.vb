@@ -16,6 +16,7 @@
     Private Sub Yes_Button_Click(sender As Object, e As EventArgs) Handles Yes_Button.Click
         formClosingEventArgs.Cancel = False
         DialogResult = DialogResult.OK
+        Form1.uninitRGB()
         Form1.saveToFile(Form1.accountConfigFile)
         Close()
     End Sub
@@ -23,6 +24,11 @@
     Private Sub No_Button_Click(sender As Object, e As EventArgs) Handles No_Button.Click
         formClosingEventArgs.Cancel = False
         DialogResult = DialogResult.OK
+        Form1.uninitRGB()
         Close()
+    End Sub
+
+    Private Sub ClosingDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

@@ -31,55 +31,55 @@ Partial Class ClosingDialog
         ' Yes_Button
         ' 
         Yes_Button.Anchor = AnchorStyles.None
-        Yes_Button.Location = New Point(13, 84)
-        Yes_Button.Margin = New Padding(4, 5, 4, 5)
+        Yes_Button.Location = New Point(11, 63)
+        Yes_Button.Margin = New Padding(4, 4, 4, 4)
         Yes_Button.Name = "Yes_Button"
-        Yes_Button.Size = New Size(89, 35)
+        Yes_Button.Size = New Size(78, 26)
         Yes_Button.TabIndex = 0
         Yes_Button.Text = "Yes (&S)"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(12, 9)
+        Label1.Location = New Point(10, 7)
         Label1.Name = "Label1"
-        Label1.Size = New Size(322, 20)
+        Label1.Size = New Size(255, 15)
         Label1.TabIndex = 1
         Label1.Text = "Would like to close the window with save data?"
         ' 
         ' No_Button
         ' 
         No_Button.Anchor = AnchorStyles.None
-        No_Button.Location = New Point(110, 84)
-        No_Button.Margin = New Padding(4, 5, 4, 5)
+        No_Button.Location = New Point(96, 63)
+        No_Button.Margin = New Padding(4, 4, 4, 4)
         No_Button.Name = "No_Button"
-        No_Button.Size = New Size(89, 35)
+        No_Button.Size = New Size(78, 26)
         No_Button.TabIndex = 2
         No_Button.Text = "No (&N)"
         ' 
         ' Cancel_Button
         ' 
         Cancel_Button.Anchor = AnchorStyles.None
-        Cancel_Button.Location = New Point(240, 84)
-        Cancel_Button.Margin = New Padding(4, 5, 4, 5)
+        Cancel_Button.Location = New Point(210, 63)
+        Cancel_Button.Margin = New Padding(4, 4, 4, 4)
         Cancel_Button.Name = "Cancel_Button"
-        Cancel_Button.Size = New Size(89, 35)
+        Cancel_Button.Size = New Size(78, 26)
         Cancel_Button.TabIndex = 1
         Cancel_Button.Text = "Cancel"
         ' 
         ' ClosingDialog
         ' 
         AcceptButton = Yes_Button
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         CancelButton = Cancel_Button
-        ClientSize = New Size(342, 133)
+        ClientSize = New Size(299, 100)
         Controls.Add(Cancel_Button)
         Controls.Add(No_Button)
         Controls.Add(Yes_Button)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(4, 4, 4, 4)
         MaximizeBox = False
         MinimizeBox = False
         Name = "ClosingDialog"

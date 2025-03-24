@@ -7,15 +7,12 @@
 
 ' License: MIT License
 
-Imports System.Configuration
 Imports System.IO
-Imports System.Text
 Imports System.Text.Encodings.Web
 Imports System.Text.Json
-Imports System.Text.Json.Nodes
 Imports System.Text.Unicode
-Imports Corale.Colore
 Imports Corale.Colore.Core
+Imports Git_Account_Manager.LedVBNet
 
 Public Class Form1
     Public userInfos As New Dictionary(Of String, UserInfo)
@@ -29,17 +26,36 @@ Public Class Form1
     End Sub
 
     Public Sub initRGB()
+
+        ''Razer Chroma Init
         Try
             Chroma.Instance.Initialize()
 
         Catch ex As Exception
 
         End Try
+
+
+        '' LightSyncInit
+        Try
+            LogitechGSDK.LogiLedInit()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
+
 
     Public Sub uninitRGB()
         Try
             Chroma.Instance.Uninitialize()
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            LogitechGSDK.LogiLedShutdown()
 
         Catch ex As Exception
 
@@ -56,6 +72,11 @@ Public Class Form1
 
             End Try
 
+            Try
+                LogitechGSDK.LogiLedSetLighting(drawingColor.R, drawingColor.G, drawingColor.B)
+
+            Catch
+            End Try
         End If
     End Sub
 
@@ -71,6 +92,7 @@ Public Class Form1
     Public Sub initColor()
         settingStaticRGBColor(Drawing.Color.Black)
     End Sub
+
 
     Public Sub addUserInfo(userInfo As UserInfo)
         If (userInfos.ContainsKey(userInfo.getName())) Then
@@ -260,7 +282,7 @@ Public Class Form1
 
     Private Sub AboutGitAccountManagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutGitAccountManagerToolStripMenuItem.Click
         Dim dialogResult = MessageBox.Show("Git Account Manager" +
-                                           vbCrLf + "Version 1.0.0" +
+                                           vbCrLf + "Version 1.0.1" +
                                            vbCrLf + "©2025 ぴたQ、Ptki",
                                            "About Git Account Manager",
                                            MessageBoxButtons.OK,
