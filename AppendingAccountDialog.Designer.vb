@@ -29,6 +29,11 @@ Partial Class AppendingAccountDialog
         MailaddressTextBox = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
+        Label3 = New Label()
+        ColorBox = New TextBox()
+        ColorDialog1 = New ColorDialog()
+        Button1 = New Button()
+        Panel1 = New Panel()
         TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -41,7 +46,7 @@ Partial Class AppendingAccountDialog
         TableLayoutPanel1.Controls.Add(OK_Button, 0, 0)
         TableLayoutPanel1.Controls.Add(Cancel_Button, 1, 0)
         TableLayoutPanel1.Location = New Point(202, 98)
-        TableLayoutPanel1.Margin = New Padding(4, 4, 4, 4)
+        TableLayoutPanel1.Margin = New Padding(4)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 1
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
@@ -52,7 +57,7 @@ Partial Class AppendingAccountDialog
         ' 
         OK_Button.Anchor = AnchorStyles.None
         OK_Button.Location = New Point(4, 4)
-        OK_Button.Margin = New Padding(4, 4, 4, 4)
+        OK_Button.Margin = New Padding(4)
         OK_Button.Name = "OK_Button"
         OK_Button.Size = New Size(77, 26)
         OK_Button.TabIndex = 0
@@ -62,7 +67,7 @@ Partial Class AppendingAccountDialog
         ' 
         Cancel_Button.Anchor = AnchorStyles.None
         Cancel_Button.Location = New Point(89, 4)
-        Cancel_Button.Margin = New Padding(4, 4, 4, 4)
+        Cancel_Button.Margin = New Padding(4)
         Cancel_Button.Name = "Cancel_Button"
         Cancel_Button.Size = New Size(78, 26)
         Cancel_Button.TabIndex = 1
@@ -104,6 +109,38 @@ Partial Class AppendingAccountDialog
         Label2.TabIndex = 4
         Label2.Text = "Mail Address"
         ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(82, 98)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(35, 15)
+        Label3.TabIndex = 5
+        Label3.Text = "Color"
+        ' 
+        ' ColorBox
+        ' 
+        ColorBox.Location = New Point(72, 116)
+        ColorBox.Name = "ColorBox"
+        ColorBox.Size = New Size(100, 23)
+        ColorBox.TabIndex = 6
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(10, 116)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(52, 23)
+        Button1.TabIndex = 7
+        Button1.Text = "Select"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(12, 93)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(36, 20)
+        Panel1.TabIndex = 8
+        ' 
         ' AppendingAccountDialog
         ' 
         AcceptButton = OK_Button
@@ -111,13 +148,17 @@ Partial Class AppendingAccountDialog
         AutoScaleMode = AutoScaleMode.Font
         CancelButton = Cancel_Button
         ClientSize = New Size(387, 145)
+        Controls.Add(Panel1)
+        Controls.Add(Button1)
+        Controls.Add(ColorBox)
+        Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(MailaddressTextBox)
         Controls.Add(UserNameTextBox)
         Controls.Add(TableLayoutPanel1)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         MaximizeBox = False
         MinimizeBox = False
         Name = "AppendingAccountDialog"
@@ -136,5 +177,10 @@ Partial Class AppendingAccountDialog
     Friend WithEvents MailaddressTextBox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents ColorBox As TextBox
+    Friend WithEvents ColorDialog1 As ColorDialog
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
 
 End Class

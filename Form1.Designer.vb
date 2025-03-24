@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         AddBtn = New Button()
         UserList = New ListBox()
@@ -36,15 +37,20 @@ Partial Class Form1
         ファイルを読み込むToolStripMenuItem = New ToolStripMenuItem()
         ヘルプHToolStripMenuItem = New ToolStripMenuItem()
         AboutGitAccountManagerToolStripMenuItem = New ToolStripMenuItem()
+        Panel1 = New Panel()
+        ChromaCheack = New CheckBox()
+        Timer1 = New Timer(components)
+        SaveFileDialog1 = New SaveFileDialog()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' AddBtn
         ' 
         AddBtn.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        AddBtn.Location = New Point(12, 272)
+        AddBtn.Location = New Point(10, 248)
+        AddBtn.Margin = New Padding(3, 2, 3, 2)
         AddBtn.Name = "AddBtn"
-        AddBtn.Size = New Size(94, 29)
+        AddBtn.Size = New Size(82, 22)
         AddBtn.TabIndex = 0
         AddBtn.Text = "Add (&A)"
         AddBtn.UseVisualStyleBackColor = True
@@ -53,17 +59,19 @@ Partial Class Form1
         ' 
         UserList.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         UserList.FormattingEnabled = True
-        UserList.Location = New Point(12, 32)
+        UserList.Location = New Point(10, 24)
+        UserList.Margin = New Padding(3, 2, 3, 2)
         UserList.Name = "UserList"
-        UserList.Size = New Size(598, 224)
+        UserList.Size = New Size(685, 199)
         UserList.TabIndex = 1
         ' 
         ' SwitchBtn
         ' 
         SwitchBtn.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        SwitchBtn.Location = New Point(516, 272)
+        SwitchBtn.Location = New Point(613, 248)
+        SwitchBtn.Margin = New Padding(3, 2, 3, 2)
         SwitchBtn.Name = "SwitchBtn"
-        SwitchBtn.Size = New Size(94, 29)
+        SwitchBtn.Size = New Size(82, 22)
         SwitchBtn.TabIndex = 2
         SwitchBtn.Text = "Switch (&S)"
         SwitchBtn.UseVisualStyleBackColor = True
@@ -71,9 +79,10 @@ Partial Class Form1
         ' RemoveBtn
         ' 
         RemoveBtn.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        RemoveBtn.Location = New Point(112, 272)
+        RemoveBtn.Location = New Point(98, 248)
+        RemoveBtn.Margin = New Padding(3, 2, 3, 2)
         RemoveBtn.Name = "RemoveBtn"
-        RemoveBtn.Size = New Size(94, 29)
+        RemoveBtn.Size = New Size(82, 22)
         RemoveBtn.TabIndex = 3
         RemoveBtn.Text = "Remove (&R)"
         RemoveBtn.UseVisualStyleBackColor = True
@@ -81,9 +90,10 @@ Partial Class Form1
         ' EditBtn
         ' 
         EditBtn.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        EditBtn.Location = New Point(212, 272)
+        EditBtn.Location = New Point(186, 248)
+        EditBtn.Margin = New Padding(3, 2, 3, 2)
         EditBtn.Name = "EditBtn"
-        EditBtn.Size = New Size(94, 29)
+        EditBtn.Size = New Size(82, 22)
         EditBtn.TabIndex = 4
         EditBtn.Text = "Edit (&E)"
         EditBtn.UseVisualStyleBackColor = True
@@ -94,7 +104,8 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {あToolStripMenuItem, ヘルプHToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(622, 28)
+        MenuStrip1.Padding = New Padding(5, 2, 0, 2)
+        MenuStrip1.Size = New Size(705, 24)
         MenuStrip1.TabIndex = 5
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -102,52 +113,74 @@ Partial Class Form1
         ' 
         あToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {設定を保存するToolStripMenuItem, バックアップToolStripMenuItem})
         あToolStripMenuItem.Name = "あToolStripMenuItem"
-        あToolStripMenuItem.Size = New Size(67, 24)
+        あToolStripMenuItem.Size = New Size(54, 20)
         あToolStripMenuItem.Text = "File (&F)"
         ' 
         ' 設定を保存するToolStripMenuItem
         ' 
         設定を保存するToolStripMenuItem.Name = "設定を保存するToolStripMenuItem"
-        設定を保存するToolStripMenuItem.Size = New Size(224, 26)
+        設定を保存するToolStripMenuItem.Size = New Size(180, 22)
         設定を保存するToolStripMenuItem.Text = "Save a config"
         ' 
         ' バックアップToolStripMenuItem
         ' 
         バックアップToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ファイルとして保存ToolStripMenuItem, ファイルを読み込むToolStripMenuItem})
         バックアップToolStripMenuItem.Name = "バックアップToolStripMenuItem"
-        バックアップToolStripMenuItem.Size = New Size(224, 26)
+        バックアップToolStripMenuItem.Size = New Size(180, 22)
         バックアップToolStripMenuItem.Text = "Backup (&B)"
         ' 
         ' ファイルとして保存ToolStripMenuItem
         ' 
         ファイルとして保存ToolStripMenuItem.Name = "ファイルとして保存ToolStripMenuItem"
-        ファイルとして保存ToolStripMenuItem.Size = New Size(224, 26)
+        ファイルとして保存ToolStripMenuItem.Size = New Size(180, 22)
         ファイルとして保存ToolStripMenuItem.Text = "Save as file"
         ' 
         ' ファイルを読み込むToolStripMenuItem
         ' 
         ファイルを読み込むToolStripMenuItem.Name = "ファイルを読み込むToolStripMenuItem"
-        ファイルを読み込むToolStripMenuItem.Size = New Size(224, 26)
+        ファイルを読み込むToolStripMenuItem.Size = New Size(180, 22)
         ファイルを読み込むToolStripMenuItem.Text = "Load file"
         ' 
         ' ヘルプHToolStripMenuItem
         ' 
         ヘルプHToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AboutGitAccountManagerToolStripMenuItem})
         ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem"
-        ヘルプHToolStripMenuItem.Size = New Size(80, 24)
+        ヘルプHToolStripMenuItem.Size = New Size(64, 20)
         ヘルプHToolStripMenuItem.Text = "Help (&H)"
         ' 
         ' AboutGitAccountManagerToolStripMenuItem
         ' 
         AboutGitAccountManagerToolStripMenuItem.Name = "AboutGitAccountManagerToolStripMenuItem"
-        AboutGitAccountManagerToolStripMenuItem.Size = New Size(277, 26)
+        AboutGitAccountManagerToolStripMenuItem.Size = New Size(223, 22)
         AboutGitAccountManagerToolStripMenuItem.Text = "About Git Account Manager"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(283, 234)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(96, 36)
+        Panel1.TabIndex = 6
+        ' 
+        ' ChromaCheack
+        ' 
+        ChromaCheack.AutoSize = True
+        ChromaCheack.Location = New Point(390, 248)
+        ChromaCheack.Name = "ChromaCheack"
+        ChromaCheack.Size = New Size(190, 19)
+        ChromaCheack.TabIndex = 7
+        ChromaCheack.Text = "Enable Gaming Device Lighting"
+        ChromaCheack.UseVisualStyleBackColor = True
+        ' 
+        ' Timer1
+        ' 
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(622, 313)
+        ClientSize = New Size(705, 279)
+        Controls.Add(ChromaCheack)
+        Controls.Add(Panel1)
         Controls.Add(EditBtn)
         Controls.Add(RemoveBtn)
         Controls.Add(SwitchBtn)
@@ -156,6 +189,7 @@ Partial Class Form1
         Controls.Add(MenuStrip1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
+        Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "Git Account Manager"
         MenuStrip1.ResumeLayout(False)
@@ -178,5 +212,9 @@ Partial Class Form1
     Friend WithEvents ヘルプHToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ファイルを読み込むToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutGitAccountManagerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ChromaCheack As CheckBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 
 End Class

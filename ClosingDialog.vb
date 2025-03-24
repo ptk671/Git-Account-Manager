@@ -16,7 +16,7 @@
     Private Sub Yes_Button_Click(sender As Object, e As EventArgs) Handles Yes_Button.Click
         formClosingEventArgs.Cancel = False
         DialogResult = DialogResult.OK
-        Form1.saveToFile()
+        Form1.saveToFile(Form1.accountConfigFile)
         Close()
     End Sub
 
